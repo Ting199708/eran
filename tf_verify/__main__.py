@@ -224,6 +224,7 @@ else:
 
 non_layer_operation_types = ['NoOp', 'Assign', 'Const', 'RestoreV2', 'SaveV2', 'PlaceholderWithDefault', 'IsVariableInitialized', 'Placeholder', 'Identity']
 
+# 在範例中 is_saved_tf_model: false, is_pb_file: false
 if is_saved_tf_model or is_pb_file:
     netfolder = os.path.dirname(netname)
 
