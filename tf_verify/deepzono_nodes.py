@@ -395,6 +395,7 @@ class DeepzonoAdd:
         offset, old_length = self.abstract_information
         element = ffn_add_bias_zono(man, True, element, offset, self.bias, old_length)
         #nn.ffn_counter += 1
+        # testing: False
         if testing:
             lb, ub = add_bounds(man, element, nlb, nub, self.output_length, offset+old_length)
             return element, lb, ub
