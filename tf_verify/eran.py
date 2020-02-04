@@ -99,6 +99,7 @@ class ERAN:
             if the analysis is succesfull (it could prove robustness for this box) then the index of the class that dominates is returned
             if the analysis couldn't prove robustness then -1 is returned
         """
+        # zonotope: np.array from zonotope_file  domain: deepzono  timeout_lp: 1  timeout_milp: 1  use_area_heuristic: True
         assert domain in ['deepzono', 'refinezono'], "domain isn't valid, must be 'deepzono' or 'refinezono'"
         nn = layers()
         nn.zonotope = zonotope
