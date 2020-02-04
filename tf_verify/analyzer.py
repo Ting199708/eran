@@ -86,8 +86,10 @@ class Analyzer:
         testing_nub = []
         for i in range(1, len(self.ir_list)):
             if self.domain == 'deepzono' or self.domain == 'refinezono':
+                # 透過 ./deepzono_nodes.py 新增 nlb & nub 的 element
                 element_test_bounds = self.ir_list[i].transformer(self.nn, self.man, element, nlb, nub, self.relu_groups, self.domain=='refinezono', self.timeout_lp, self.timeout_milp, self.testing)
             else:
+                # 透過 ./deeppoly_nodes.py 新增 nlb & nub 的 element
                 element_test_bounds = self.ir_list[i].transformer(self.nn, self.man, element, nlb, nub, self.relu_groups, self.domain=='refinepoly', self.timeout_lp, self.timeout_milp, self.use_area_heuristic, self.testing)
 
             if self.testing and isinstance(element_test_bounds, tuple):
