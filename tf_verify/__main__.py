@@ -248,7 +248,7 @@ if is_saved_tf_model or is_pb_file:
 
 else:
     if(zonotope_bool==True):
-        num_pixels = len(zonotope)
+        num_pixels = len(zonotope) #784
     elif(dataset=='mnist'):
         num_pixels = 784
     elif (dataset=='cifar10'):
@@ -262,6 +262,7 @@ else:
         model, _, means, stds = read_tensorflow_net(netname, num_pixels, is_trained_with_pytorch)
     eran = ERAN(model, is_onnx=is_onnx)
 
+# is_trained_with_pytorch: True (if netname 副檔名為 .pyt)
 if not is_trained_with_pytorch:
     if dataset == 'mnist' and not config.geometric:
         means = [0]
@@ -272,7 +273,7 @@ if not is_trained_with_pytorch:
 
 is_trained_with_pytorch = is_trained_with_pytorch or is_onnx
 
-if config.mean:
+if config.mean: #false
     means = config.mean
     stds = config.std
 
@@ -281,7 +282,7 @@ verified_images = 0
 
 
 if dataset:
-    tests = get_tests(dataset, config.geometric)
+    tests = get_tests(dataset, config.geometric) # data is from ../data/*_test.csv
 
 
 if dataset=='acasxu':
