@@ -346,6 +346,7 @@ if dataset=='acasxu':
     print(end - start, "seconds")
 
 elif zonotope_bool:
+    # config.timeout_lp: 1  config.timeout_milp: 1,  config.use_area_heuristic: True
     perturbed_label, nn, nlb, nub = eran.analyze_zonotope(zonotope, domain, config.timeout_lp, config.timeout_milp, config.use_area_heuristic)
     print("nlb ",nlb[-1])
     print("nub ",nub[-1])
