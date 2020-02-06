@@ -143,6 +143,7 @@ class Analyzer:
                 label = i
                 for j in range(output_size):
                     if self.domain == 'deepzono' or self.domain == 'refinezono':
+                        # self.man = zonoml_manager_alloc()
                         if i!=j and not self.is_greater(self.man, element, i, j):
                             flag = False
                             break
