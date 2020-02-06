@@ -136,7 +136,7 @@ class Analyzer:
             num_var = len(var_list)
             output_size = num_var - counter
 
-
+        # self.specnumber = 0
         if self.specnumber==0:
             for i in range(output_size):
                 flag = True
