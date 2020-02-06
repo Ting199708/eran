@@ -58,6 +58,7 @@ class Analyzer:
             self.is_greater = is_greater
         elif domain == 'deepzono' or domain == 'refinezono':
             self.man = zonoml_manager_alloc()
+            # is_greater_zono: from ELINA/python_interface/zonoml.py
             self.is_greater = is_greater_zono
         if domain == 'refinezono' or domain == 'refinepoly':
             self.refine = True
@@ -144,6 +145,8 @@ class Analyzer:
                 for j in range(output_size):
                     if self.domain == 'deepzono' or self.domain == 'refinezono':
                         # self.man = zonoml_manager_alloc()
+                        # is_greater_zono: from ELINA/python_interface/zonoml.py
+                        # self.is_greater = is_greater_zono
                         if i!=j and not self.is_greater(self.man, element, i, j):
                             flag = False
                             break
