@@ -75,6 +75,7 @@ def read_tensorflow_net(net_file, in_len, is_trained_with_pytorch):
     h,w,c = None, None, None
     is_conv = False
     while True:
+        # s[:-1] == s[0:len(s)]
         curr_line = net.readline()[:-1]
         if 'Normalize' in curr_line:
             mean = extract_mean(curr_line)
