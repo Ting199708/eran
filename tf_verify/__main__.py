@@ -784,6 +784,7 @@ else:
         specLB = np.copy(image)
         specUB = np.copy(image)
 
+        # normalized data: 平均值: 0 標準差: 1
         normalize(specLB, means, stds, dataset)
         normalize(specUB, means, stds, dataset)
 
