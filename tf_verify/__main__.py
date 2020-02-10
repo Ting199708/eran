@@ -799,7 +799,8 @@ else:
         #if(label == int(test[0])):
         if(label == int(test[0])):
             perturbed_label = None
-
+            
+            # 限制數值在 0~1 間
             specLB = np.clip(image - epsilon,0,1)
             specUB = np.clip(image + epsilon,0,1)
             normalize(specLB, means, stds, dataset)
