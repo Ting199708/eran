@@ -564,6 +564,7 @@ elif config.geometric:
 
 
     else:
+        ＃ i: index  test: The i-th element in csv file
         for i, test in enumerate(tests):
             if config.from_test and i < config.from_test:
                 continue
