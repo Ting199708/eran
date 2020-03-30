@@ -153,6 +153,9 @@ class Analyzer:
                             break
                     else:
                         if label!=j and not self.is_greater(self.man, element, label, j, self.use_area_heuristic):
+                            # is_greater: ELINA/python_interface/fppoly.py
+                            # fppoly.py 從 ELINA/fppoly/fppoly.c 呼叫 is_greater
+                            # self.is_greater = is_greater
 
                             if(self.domain=='refinepoly'):
                                 obj = LinExpr()
